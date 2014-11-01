@@ -1,6 +1,6 @@
 #include "log.h"
-#include "lock.h"
-#include "srktime.h"
+#include "thread/lock.h"
+#include "time/srktime.h"
 #include <iostream>
 using namespace std;
 namespace SRK

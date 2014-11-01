@@ -1,5 +1,5 @@
-#include "srktime.h"
-#include "lock.h"
+#include "time/srktime.h"
+#include "thread/lock.h"
 namespace SRK
 {
 	CTime::CTime()

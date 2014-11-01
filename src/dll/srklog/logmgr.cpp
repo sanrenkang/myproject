@@ -1,5 +1,5 @@
 #include "logmgr.h"
-#include "lock.h"
+#include "thread/lock.h"
 #include <cstdarg>
 namespace SRK
 {

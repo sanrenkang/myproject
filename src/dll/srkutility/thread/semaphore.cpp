@@ -1,4 +1,4 @@
-#include "semaphore.h"
+#include "thread/semaphore.h"
 
 namespace SRK
 {
