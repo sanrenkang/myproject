@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\thread">
+      <UniqueIdentifier>{7c272166-ad2e-420a-8ac9-1460d9a5d531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\thread">
+      <UniqueIdentifier>{cf17395c-22d8-4ed3-9393-aef603b236d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\time">
+      <UniqueIdentifier>{5e362e2a-f669-4ee6-a60c-246b68f4f0ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\time">
+      <UniqueIdentifier>{75340e09-e6fb-4c8c-b27c-c66f880174ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\string">
+      <UniqueIdentifier>{e36640dd-bcf8-401b-ba31-ff4052889608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\string">
+      <UniqueIdentifier>{e0a4ea90-029c-4779-817c-bc1c81610b4f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\dll\srkutility\threadbase.h">
+      <Filter>头文件\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\dll\srkutility\lock.h">
+      <Filter>头文件\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\dll\srkutility\mutex.h">
+      <Filter>头文件\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\dll\srkutility\srktime.h">
+      <Filter>头文件\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\srktype.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\dll\srkutility\semaphore.h">
+      <Filter>头文件\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\dll\srkutility\srkstring.h">
+      <Filter>头文件\string</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\dll\srkutility\thradbase.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\dll\srkutility\lock.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\dll\srkutility\mutex.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\dll\srkutility\srktime.cpp">
+      <Filter>源文件\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\dll\srkutility\semaphore.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\dll\srkutility\srkstring.cpp">
+      <Filter>源文件\string</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
