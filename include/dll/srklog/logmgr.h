@@ -1,7 +1,7 @@
 #ifndef _SRK_LOG_MGR_H
 #define _SRK_LOG_MGR_H
 #include <string>
-#include "threadbase.h"
+#include "thread/threadbase.h"
 #include "srktype.h"
 #include "log.h"
 #include <map>

@@ -2,11 +2,11 @@
 #define _SRK_LOG_
 #include <string>
 #include <deque>
-#include "mutex.h"
+#include "thread/mutex.h"
 #include <iostream>
 #include <fstream>
-#include "threadbase.h"
-#include "semaphore.h"
+#include "thread/threadbase.h"
+#include "thread/semaphore.h"
 using namespace std;
 
 

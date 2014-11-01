@@ -3,7 +3,7 @@
 #include <time.h>
 #include "srktype.h"
 #include <string>
-#include "mutex.h"
+#include "thread/mutex.h"
 using namespace std;
 namespace SRK
 {
