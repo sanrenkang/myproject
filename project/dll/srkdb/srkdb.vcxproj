@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\..\..\bin\dll\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <IntDir>..\..\..\..\obj\$(Configuration)\</IntDir>
+    <IntDir>..\..\..\obj\$(Configuration)\</IntDir>
     <IncludePath>E:\MyProject\include\third\mysql;..\..\..\include\dll\srkdb;..\..\..\include\dll\srkutility;..\..\..\include\dll\srklog;..\..\..\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\MyProject\bin\dll\Win32\Debug;E:\MyProject\src\dll\srkdb;E:\MyProject\bin\dll\Win32\Debug\srkutility;E:\MyProject\bin\dll\Win32\Debug\srklog;$(LibraryPath)</LibraryPath>
   </PropertyGroup>

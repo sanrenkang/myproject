@@ -33,46 +33,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\dll\srkutility\threadbase.h">
+    <ClInclude Include="..\..\..\include\dll\srkutility\srkstring.h">
+      <Filter>头文件\string</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\dll\srkutility\thread\lock.h">
       <Filter>头文件\thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\dll\srkutility\lock.h">
+    <ClInclude Include="..\..\..\include\dll\srkutility\thread\mutex.h">
       <Filter>头文件\thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\dll\srkutility\mutex.h">
+    <ClInclude Include="..\..\..\include\dll\srkutility\thread\semaphore.h">
       <Filter>头文件\thread</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\dll\srkutility\srktime.h">
+    <ClInclude Include="..\..\..\include\dll\srkutility\thread\threadbase.h">
+      <Filter>头文件\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\dll\srkutility\time\srktime.h">
       <Filter>头文件\time</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\srktype.h">
+    <ClInclude Include="..\..\..\include\srktype.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\include\dll\srkutility\semaphore.h">
-      <Filter>头文件\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\include\dll\srkutility\srkstring.h">
-      <Filter>头文件\string</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\src\dll\srkutility\thradbase.cpp">
-      <Filter>源文件\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\dll\srkutility\lock.cpp">
-      <Filter>源文件\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\dll\srkutility\mutex.cpp">
-      <Filter>源文件\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\dll\srkutility\srktime.cpp">
-      <Filter>源文件\time</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\dll\srkutility\semaphore.cpp">
-      <Filter>源文件\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\dll\srkutility\srkstring.cpp">
+    <ClCompile Include="..\..\..\src\dll\srkutility\string\srkstring.cpp">
       <Filter>源文件\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\dll\srkutility\thread\lock.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\dll\srkutility\thread\mutex.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\dll\srkutility\thread\semaphore.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\dll\srkutility\thread\thradbase.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\dll\srkutility\time\srktime.cpp">
+      <Filter>源文件\time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

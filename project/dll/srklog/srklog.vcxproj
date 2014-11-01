@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -42,10 +42,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\..\bin\dll\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <IntDir>..\..\..\..\obj\$(Configuration)\</IntDir>
+    <IntDir>..\..\..\obj\$(Configuration)\</IntDir>
     <IncludePath>..\..\..\include\dll\srkutility;..\..\..\include\dll\srklog;..\..\..\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\MyProject\bin\dll\Win32\Debug\srkutility;$(LibraryPath)</LibraryPath>
-    <ReferencePath>E:\MyProject\bin\dll\Win32\Debug\srkutility;$(ReferencePath)</ReferencePath>
+    <LibraryPath>..\..\..\bin\dll\Win32\Debug\srkutility;$(LibraryPath)</LibraryPath>
+    <ReferencePath>..\..\..\bin\dll\Win32\Debug\srkutility;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
