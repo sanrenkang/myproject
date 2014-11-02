@@ -1,0 +1,15 @@
+__inline void	KMP_GetNext(TCHAR * sString, int * iNext)
+{
+    iNext[0] = -1;
+    int i = -1;
+    for(int j = 1; sString[j] != 0; j++)
+    {
+        while(sString[j] != sString[i + 1] && (i >= 0))
+            i = iNext[i];
+        if(sString[j] == sString[i + 1])
+            iNext[j] = i + 1;
+        else
+            iNext[j] = -1;
+        i = iNext[j];
+    }
+}
