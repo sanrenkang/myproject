@@ -4,11 +4,15 @@
 
 #include "time/srktime.h"
 #include <iostream>
+#include "srktype.h"
 using namespace std;
 using namespace SRK;
 int main(int argc, char argv[])
 {
-	cout << GetCurMicroSeconds() << endl;
+	UINT64 qwSecond = GetCurMicroSeconds() / 1000000LL ;
+	CTime oTime(qwSecond);
+
+	cout << oTime.ToString() << endl;
 	return 0;
 }
 

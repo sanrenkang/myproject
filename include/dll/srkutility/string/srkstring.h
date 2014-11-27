@@ -5,6 +5,10 @@
 using namespace std;
 namespace SRK
 {
+#ifdef WIN32
+#define	SRKSprintf sprintf_s 
+#endif // WIN32
+
 	class CString : public string
 	{
 	public: 

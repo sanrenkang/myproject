@@ -3,6 +3,9 @@
 
 namespace SRK
 {
+#ifdef WIN32
+
+#else
 	typedef unsigned char UINT8;
 	typedef unsigned short UINT16;
 	typedef unsigned long UINT32;
@@ -19,6 +22,7 @@ namespace SRK
 #define NULL 0
 #define FALSE 0
 #define TRUE 1
+#endif
 
 #define DECLARE_SINGLE_OBJECT( OBJTYPE ) \
 public: \

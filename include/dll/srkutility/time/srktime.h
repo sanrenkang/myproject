@@ -4,6 +4,11 @@
 #include "srktype.h"
 #include <string>
 #include "thread/mutex.h"
+#ifdef WIN32
+
+#else
+#include <sys/time.h>
+#endif
 using namespace std;
 namespace SRK
 {
@@ -38,9 +43,16 @@ namespace SRK
 
 	private:
 		time_t m_timeValue;
-		//CMutex m_oMutex;
+		struct tm m_curTime;
 	};
 
+	class CMsDiff
+	{
+
+	};
+
+	//获取当前毫秒数
+	UINT64 GetCurMicroSeconds();
 	UINT64 GetCurTimeValue();
 	BOOL IsToday(UINT64 qwTime);
 	CTime GetCurTimeObject();

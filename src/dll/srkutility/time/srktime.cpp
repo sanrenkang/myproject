@@ -49,7 +49,7 @@ namespace SRK
 	string CTime::ToString()
 	{
 		TCHAR aszTimeBuf[64] = {0};
-		SRKSprintf(aszTimeBuf,"%04u-%02u-%02u %02d:%02d:%02d",m_curTime.tm_year + 1990 , m_curTime.tm_mon + 1,m_curTime.tm_mday,
+		SRKSprintf(aszTimeBuf,"%04u-%02u-%02u %02d:%02d:%02d",m_curTime.tm_year + 1900 , m_curTime.tm_mon + 1,m_curTime.tm_mday,
 			m_curTime.tm_hour, m_curTime.tm_min, m_curTime.tm_sec);
 		return aszTimeBuf;
 	}
