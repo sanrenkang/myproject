@@ -33,9 +33,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\include\dll\srkutility\srkstring.h">
-      <Filter>头文件\string</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\dll\srkutility\thread\lock.h">
       <Filter>头文件\thread</Filter>
     </ClInclude>
@@ -53,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\include\srktype.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\dll\srkutility\string\srkstring.h">
+      <Filter>头文件\string</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
