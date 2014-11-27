@@ -1,107 +1,82 @@
 #include "time/srktime.h"
 #include "thread/lock.h"
+#include "string/srkstring.h"
+
 namespace SRK
 {
 	CTime::CTime()
 	{
 		m_timeValue = 0;
+		memset(&m_curTime, 0, sizeof(m_curTime));
 	}
 	CTime::CTime(time_t dateValue)
 	{
 		m_timeValue = dateValue;
+		localtime_s(&m_curTime, &m_timeValue);
 	}
 
 	UINT32 CTime::GetYear()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		return curTime.tm_year + 1990;
+		return m_curTime.tm_year + 1990;
 	}
 
 	UINT32 CTime::GetMonth()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		return curTime.tm_mon + 1;
+		return m_curTime.tm_mon + 1;
 	}
 	UINT32 CTime::GetDay()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		return curTime.tm_mday;
+		return m_curTime.tm_mday;
 	}
 	UINT32 CTime::GetHour()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		return curTime.tm_hour;
+		return m_curTime.tm_hour;
 	}
 	UINT32 CTime::GetMinute()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		return curTime.tm_min;
+		return m_curTime.tm_min;
 	}
 	UINT32 CTime::GetSecond()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		return curTime.tm_sec;
+		return m_curTime.tm_sec;
 	}
 
 	UINT64 CTime::GetTimeValue()
 	{
-		 
 		return m_timeValue;
 	}
 
 	string CTime::ToString()
 	{
-		 
-		struct tm curTime;
-		localtime_s(&curTime, &m_timeValue);
-		curTime.tm_year += 1900;
-		curTime.tm_mon += 1;
 		TCHAR aszTimeBuf[64] = {0};
-		sprintf_s(aszTimeBuf,"%04u-%02u-%02u %02d:%02d:%02d",curTime.tm_year, curTime.tm_mon,curTime.tm_mday,
-			curTime.tm_hour, curTime.tm_min, curTime.tm_sec);
+		SRKSprintf(aszTimeBuf,"%04u-%02u-%02u %02d:%02d:%02d",m_curTime.tm_year + 1990 , m_curTime.tm_mon + 1,m_curTime.tm_mday,
+			m_curTime.tm_hour, m_curTime.tm_min, m_curTime.tm_sec);
 		return aszTimeBuf;
 	}
 
 	string CTime::ToString(const char* format)
 	{
-		 
-		struct tm curTime;;
-		localtime_s(&curTime, &m_timeValue);
-		curTime.tm_year += 1900;
-		curTime.tm_mon += 1;
 		TCHAR aszTimeBuf[64] = {0};
 		if ( 0 == strcmp("YYYY-MM-DD hh:mm:ss", format) )
 		{
-			sprintf_s(aszTimeBuf,"%04u-%02u-%02u %02d:%02d:%02d",curTime.tm_year, curTime.tm_mon,curTime.tm_mday,
-				curTime.tm_hour, curTime.tm_min, curTime.tm_sec);
+			SRKSprintf(aszTimeBuf,"%04u-%02u-%02u %02d:%02d:%02d",m_curTime.tm_year + 1900, m_curTime.tm_mon + 1,m_curTime.tm_mday,
+				m_curTime.tm_hour, m_curTime.tm_min, m_curTime.tm_sec);
 			return aszTimeBuf;
 		}
 		else if ( 0 == strcmp("YYYY-MM-DD", format))
 		{
-			sprintf_s(aszTimeBuf,"%04u-%02u-%02u",curTime.tm_year, curTime.tm_mon,curTime.tm_mday);
+			SRKSprintf(aszTimeBuf,"%04u-%02u-%02u",m_curTime.tm_year + 1900, m_curTime.tm_mon + 1, m_curTime.tm_mday);
 			return aszTimeBuf;
 		}
 		else if ( 0 == strcmp("hh:mm:ss" , format))
 		{
-			sprintf_s(aszTimeBuf,"%02d:%02d:%02d", curTime.tm_hour, curTime.tm_min, curTime.tm_sec);
+			SRKSprintf(aszTimeBuf,"%02d:%02d:%02d", m_curTime.tm_hour, m_curTime.tm_min, m_curTime.tm_sec);
 			return aszTimeBuf;
 		}
 		else if ( 0 == strcmp("YYYYMMDDhhmmss", format))
 		{
-			sprintf_s(aszTimeBuf,"%04u%02u%02u%02d%02d%02d",curTime.tm_year, curTime.tm_mon,curTime.tm_mday,
-				curTime.tm_hour, curTime.tm_min, curTime.tm_sec);
+			SRKSprintf(aszTimeBuf,"%04u%02u%02u%02d%02d%02d", m_curTime.tm_year + 1900, m_curTime.tm_mon + 1, m_curTime.tm_mday,
+				m_curTime.tm_hour, m_curTime.tm_min, m_curTime.tm_sec);
 			return aszTimeBuf;
 		}
 		return "";
@@ -112,10 +87,8 @@ namespace SRK
 		 
 		if ( dwYear >= 1900 && dwYear < 10000)
 		{
-			struct tm curTime;
-			localtime_s(&curTime, &m_timeValue);
-			curTime.tm_year = dwYear - 1900;
-			m_timeValue = mktime(&curTime);
+			m_curTime.tm_year = dwYear - 1900;
+			m_timeValue = mktime(&m_curTime);
 		}
 	}
 	void CTime::SetMonth(UINT32 dwMonth)
@@ -123,10 +96,8 @@ namespace SRK
 		 
 		if(dwMonth > 0 && dwMonth < 13)
 		{
-			struct tm curTime;
-			localtime_s(&curTime, &m_timeValue);
-			curTime.tm_mon = dwMonth - 1;
-			m_timeValue = mktime(&curTime);
+			m_curTime.tm_mon = dwMonth - 1;
+			m_timeValue = mktime(&m_curTime);
 		}
 	}
 	void CTime::SetDay(UINT32 dwDay)
@@ -134,10 +105,8 @@ namespace SRK
 		 
 		if ( dwDay > 0 && dwDay < 32)
 		{
-			struct tm curTime;
-			localtime_s(&curTime, &m_timeValue);
-			curTime.tm_mday = dwDay;
-			m_timeValue = mktime(&curTime);
+			m_curTime.tm_mday = dwDay;
+			m_timeValue = mktime(&m_curTime);
 		}
 	}
 	void CTime::SetHour(UINT32 dwHour)
@@ -145,10 +114,8 @@ namespace SRK
 		 
 		if ( dwHour >= 0 && dwHour < 24)
 		{
-			struct tm curTime;
-			localtime_s(&curTime, &m_timeValue);
-			curTime.tm_hour = dwHour;
-			m_timeValue = mktime(&curTime);
+			m_curTime.tm_hour = dwHour;
+			m_timeValue = mktime(&m_curTime);
 		}
 	}
 	void CTime::SetMinute(UINT32 dwMin)
@@ -156,10 +123,8 @@ namespace SRK
 		 
 		if (dwMin >= 0 && dwMin < 60)
 		{
-			struct tm curTime;
-			localtime_s(&curTime, &m_timeValue);
-			curTime.tm_min = dwMin;
-			m_timeValue = mktime(&curTime);
+			m_curTime.tm_min = dwMin;
+			m_timeValue = mktime(&m_curTime);
 		}
 	}
 	void CTime::SetSecond(UINT32 dwSec)
@@ -167,10 +132,8 @@ namespace SRK
 		 
 		if (dwSec >= 0 && dwSec < 60)
 		{
-			struct tm curTime;
-			localtime_s(&curTime, &m_timeValue);
-			curTime.tm_sec = dwSec;
-			m_timeValue = mktime(&curTime);
+			m_curTime.tm_sec = dwSec;
+			m_timeValue = mktime(&m_curTime);
 		}
 	}
 
@@ -183,8 +146,27 @@ namespace SRK
 	UINT64 GetCurTimeValue()
 	{
 		time_t curTime = 0;
+		static CMutex timeMutex;
+		timeMutex.Lock();
 		time(&curTime);
+		timeMutex.UnLock();
 		return curTime;
+	}
+	#define EPOCH_1970_1601 116444736000000000ULL
+	UINT64 GetCurMicroSeconds()
+	{
+#ifdef WIN32
+		FILETIME ft;
+		GetSystemTimeAsFileTime( &ft);
+		ULARGE_INTEGER li;
+		li.LowPart = ft.dwLowDateTime;
+		li.HighPart = ft.dwHighDateTime;
+		return (li.QuadPart - EPOCH_1970_1601) / 10;
+#else
+		struct timeval curTime;
+		 gettimeofday(&curTime, NULL);
+		 return curTime.tv_sec * 1000000 + curTime.tv_usec;
+#endif
 	}
 
 	BOOL IsToday(UINT64 qwTime)

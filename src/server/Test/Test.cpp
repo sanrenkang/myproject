@@ -2,10 +2,13 @@
 //
 
 
-
-
+#include "time/srktime.h"
+#include <iostream>
+using namespace std;
+using namespace SRK;
 int main(int argc, char argv[])
 {
+	cout << GetCurMicroSeconds() << endl;
 	return 0;
 }
 
