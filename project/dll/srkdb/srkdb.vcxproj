@@ -20,14 +20,12 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -42,8 +40,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\..\..\bin\dll\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>..\..\..\obj\$(Configuration)\</IntDir>
-    <IncludePath>E:\MyProject\include\third\mysql;..\..\..\include\dll\srkdb;..\..\..\include\dll\srkutility;..\..\..\include\dll\srklog;..\..\..\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\MyProject\bin\dll\Win32\Debug;E:\MyProject\src\dll\srkdb;E:\MyProject\bin\dll\Win32\Debug\srkutility;E:\MyProject\bin\dll\Win32\Debug\srklog;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\..\thirdmodule\mysql\include;..\..\..\include\dll\srkdb;..\..\..\include\dll\srkutility;..\..\..\include\dll\srklog;..\..\..\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\..\bin\dll\Win32\Debug\srkdb;$(LibraryPath)</LibraryPath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -60,7 +59,7 @@
     </Link>
     <Lib>
       <AdditionalDependencies>mysqlclient.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\thirdmodule\mysql\lib\Win64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

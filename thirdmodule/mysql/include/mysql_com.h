@@ -20,6 +20,9 @@
 #ifndef _mysql_com_h
 #define _mysql_com_h
 
+#ifdef WIN32
+#include<winsock2.h>
+#endif
 #define HOSTNAME_LENGTH 60
 #define SYSTEM_CHARSET_MBMAXLEN 4
 #define NAME_CHAR_LEN	64              /* Field/table name length */
