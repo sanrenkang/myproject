@@ -41,6 +41,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>../../../include;../../../include/dll/srkutility;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\..\bin\dll\Win32\Debug\srkutility;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\..\bin\server\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

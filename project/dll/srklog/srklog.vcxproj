@@ -43,7 +43,7 @@
     <IntDir>..\..\..\obj\$(Configuration)\</IntDir>
     <IncludePath>..\..\..\include\dll\srkutility;..\..\..\include\dll\srklog;..\..\..\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\..\bin\dll\Win32\Debug\srkutility;$(LibraryPath)</LibraryPath>
-    <ReferencePath>..\..\..\bin\dll\Win32\Debug\srkutility;$(ReferencePath)</ReferencePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
