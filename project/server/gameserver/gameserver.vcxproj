@@ -44,6 +44,7 @@
     <IntDir>..\..\..\obj\$(Configuration)\</IntDir>
     <ReferencePath>$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib</ReferencePath>
     <LibraryPath>..\..\..\bin\dll\Win32\Debug\srkframework;..\..\..\bin\dll\Win32\Debug\srklog;..\..\..\bin\dll\Win32\Debug\srkdb;..\..\..\bin\dll\Win32\Debug\srkutility;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\..\src\server;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -79,7 +80,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\server\gameserver\db\dbmgr.cpp" />
+    <ClCompile Include="..\..\..\src\server\gameserver\framework\config.cpp" />
+    <ClCompile Include="..\..\..\src\server\gameserver\logic\logicmgr.cpp" />
     <ClCompile Include="..\..\..\src\server\gameserver\main.cpp" />
+    <ClCompile Include="..\..\..\src\server\gameserver\net\netmgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\server\common\singleclass.h" />
+    <ClInclude Include="..\..\..\src\server\gameserver\db\dbmgr.h" />
+    <ClInclude Include="..\..\..\src\server\gameserver\framework\config.h" />
+    <ClInclude Include="..\..\..\src\server\gameserver\logic\logicmgr.h" />
+    <ClInclude Include="..\..\..\src\server\gameserver\net\netmgr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
